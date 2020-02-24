@@ -1,0 +1,32 @@
+<head>
+  <title>mtr-app</title>
+</head>
+
+<body>
+  {{> navbar}}
+  <div class="container"> 
+    {{> hello}}
+  </div>
+  {{> footer}}
+</body>
+
+<template name="hello">
+  <div class="counter-wrapper full-height">
+    <h1 class="title has-text-centered">Welcome to Meteor!</h1>
+    <div class="control">
+      <input class="input" type="text" placeholder="Enter your name...">
+    </div>
+    <button class="button is-primary is-rounded mb-2 mt-1">Click Me</button>
+    <h2 class="subtitle">{{ name }}</h2>
+  </div>
+</template>
+
+<template name="team">
+  <div class="columns">
+    {{#each member in team}}
+      <div class="column">
+        {{ member }}
+      </div>
+    {{/each}}
+  </div>
+</template>

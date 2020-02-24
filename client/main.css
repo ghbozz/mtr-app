@@ -1,0 +1,31 @@
+body {
+  padding: 0px;
+  font-family: sans-serif;
+}
+
+.mt-1 {
+	margin-top: 1rem !important;
+}
+
+.mt-2 {
+	margin-top: 2rem !important;
+}
+
+.mb-1 {
+	margin-bottom: 1rem !important;
+}
+
+.mb-2 {
+	margin-bottom: 2rem !important;
+}
+
+.full-height {
+	min-height: calc(100vh - 220px);
+}
+
+.counter-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
