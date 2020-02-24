@@ -20,12 +20,9 @@ Template.hello.helpers({
   },
 });
 
+
 Template.hello.events({
   'keyup input'(event, instance) {
     instance.name.set(event.target.value);
   },
-
-  'click button'(event, instance) {
-  	// instance.team.push('io');
-  }
 });
