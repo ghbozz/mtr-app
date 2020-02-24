@@ -26,7 +26,6 @@ Template.hello.events({
   },
 
   'click button'(event, instance) {
-  	// instance.team.set();
-  	// console.log(instance.team)
+  	// instance.team.push('io');
   }
 });
