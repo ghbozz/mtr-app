@@ -29,3 +29,19 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+
+form {
+	display: flex;
+}
+
+.input {
+	margin-right: 10px;
+}
+
+.messages {
+	width: 100%;
+}
+
+.message {
+	margin: 10px 0px;
+}

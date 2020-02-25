@@ -12,11 +12,21 @@
 
 <template name="hello">
   <div class="counter-wrapper full-height">
-    <h1 class="title has-text-centered">Welcome to Meteor!</h1>
-    <div class="control">
-      <input class="input" type="text" placeholder="Enter your name...">
+
+    <form action="" class="js-insert-message mb-2">
+      <input class="input" type="text" name="content" placeholder="message">
+      <button type="submit" class="button is-primary">Send</button>
+    </form>
+
+    <h3 class="title">Messages</h3>
+
+    <div class="messages columns is-multiline is-2">
+      {{#each message in messages}}
+        <div class="message column is-3 has-text-centered js-remove-message" id="{{ message._id }}">
+          {{message.content}}
+        </div>
+      {{/each}}
     </div>
-    <button class="button is-primary is-rounded mb-2 mt-1">Click Me</button>
-    <h2 class="subtitle">{{ name }}</h2>
+
   </div>
 </template>

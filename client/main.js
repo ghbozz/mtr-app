@@ -8,20 +8,39 @@ import './main.html';
 import './components/navbar.html';
 import './components/footer.html';
 
+// COLLECTIONS
+import { Messages } from '../both/collections'
+
+if (Meteor.isDevelopment) {
+  window.Messages = Messages
+}
+
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
-  this.name = new ReactiveVar('Name');
+
 });
 
 Template.hello.helpers({
-  name() {
-    return Template.instance().name.get();
-  },
+  messages() {
+    return Messages.find().fetch();
+  }
 });
 
-
 Template.hello.events({
-  'keyup input'(event, instance) {
-    instance.name.set(event.target.value);
+  'submit .js-insert-message'(event, instance) {
+    event.preventDefault();
+
+    const data = {
+      content: event.target.content.value,
+      createdAt: new Date()
+    };
+
+    Messages.insert(data);
+    event.target.content.value = '';
   },
+
+  'click .js-remove-message'(event, instance) {
+    const id = event.target.id
+    Messages.remove({_id: id})
+  }
 });
