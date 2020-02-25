@@ -4,7 +4,6 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import 'bulma/css/bulma.css'
 import './main.html';
 
-
 // COMPONENTS
 import './components/navbar.html';
 import './components/footer.html';
